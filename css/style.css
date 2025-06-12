@@ -9,7 +9,7 @@
 
 body {
   text-align: center;
-  background: url('../imagens/7e8cff89-07ae-4619-a9ce-c17c07c0ab1e.png') no-repeat center center fixed;
+  background: url('../imagens/ash_and_greninja.jpg') no-repeat center center fixed;
   background-size: cover;
   min-height: 100vh;
   position: relative;
@@ -53,7 +53,7 @@ main {
 }
 
 .pokemon_name {
-  color: #3a444d;
+  color: #474747;
   text-transform: capitalize;
 }
 

@@ -34,10 +34,9 @@ const typeIcons = {
 const fetchPokemon = async (pokemon) => {
   try {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-if (response.ok) {
-  return await response.json();
-}
-
+    if (response.ok) {
+      return await response.json();
+    }
   } catch (error) {
     console.error('Erro ao buscar Pokémon:', error);
   }
@@ -63,7 +62,7 @@ const renderPokemon = async (pokemon) => {
     data.types.forEach((typeInfo) => {
       const typeName = typeInfo.type.name;
       const typeDiv = document.createElement('div');
-      typeDiv.classList.add('pokemon_type');
+      typeDiv.classList.add('pokemon_type', `type-${typeName}`);
 
       const typeIcon = document.createElement('img');
       typeIcon.src = typeIcons[typeName] || '';
@@ -87,7 +86,7 @@ const renderPokemon = async (pokemon) => {
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  renderPokemon(input.value.trim());
+  renderPokemon(input.value.trim().toLowerCase());
 });
 
 buttonPrev.addEventListener('click', () => {
